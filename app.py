@@ -4,18 +4,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
-import plotly.express as px
-import plotly.io as pio
 from pandas_datareader.stooq import StooqDailyReader
 
 app = Flask(__name__)
 
 def calculate_indicators(data):
-    from pandas_datareader.stooq import StooqDailyReader
-    import pandas as pd
-    import numpy as np
-    import matplotlib.pyplot as plt
-
     # 証券コード、開始、終了区間、RSI領域
     company_code = '7867.JP'
     start = '2020-04-01'
@@ -131,7 +124,6 @@ def calculate_indicators(data):
     # Show the plot
     plt.show()
 
-    
     # 画像データに変換して返す
     img_buffer = BytesIO()
     plt.savefig(img_buffer, format='png')
